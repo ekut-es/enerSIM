@@ -1,0 +1,21 @@
+venv/
+.idea/
+__pycache__/
+*.hdf5
+.vscode
+*.json
+*.pyc
+*.pdf
+*.csv
+*2020.sqlite
+*.sql
+.ipynb_checkpoints/
+# Pictures
+*.png
+*.o
+nohup.out 
+*.zip
+*.tar.gz
+enerdag_sim
+
+enerdagsim/target

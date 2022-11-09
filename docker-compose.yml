@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  simulation:
+    build:
+      context: .
+      dockerfile: .Dockerfile
+    volumes:
+      - .:/simulation
+      # We need to give the sled db in the simulations some space to put data. /dev/shm can probably be mapped to any other directory
+      # e.g. /tmp or anything that can be cleaned regularly.
+      - /dev/shm:/dev/shm

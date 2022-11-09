@@ -1,0 +1,39 @@
+[package]
+name = "enerdagsim"
+version = "0.1.0"
+edition = "2021"
+authors = ["Florian Gehring", "Christoph Gross"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+enerdag-core = {git = "https://gitlab+deploy-token-enerdag:Qhsn9UkL6zZxa4xPkWQf@atreus.informatik.uni-tuebingen.de/SecureEnergyProsumer/enerdag/", branch = "main"}
+
+enerdag-crypto = {git = "https://gitlab+deploy-token-enerdag:Qhsn9UkL6zZxa4xPkWQf@atreus.informatik.uni-tuebingen.de/SecureEnergyProsumer/enerdag/", branch = "main"}
+enerdag-marketplace = {git = "https://gitlab+deploy-token-enerdag:Qhsn9UkL6zZxa4xPkWQf@atreus.informatik.uni-tuebingen.de/SecureEnergyProsumer/enerdag/", branch = "main"}
+enerdag-time = {git = "https://gitlab+deploy-token-enerdag:Qhsn9UkL6zZxa4xPkWQf@atreus.informatik.uni-tuebingen.de/SecureEnergyProsumer/enerdag/", branch = "main"}
+enerdag-currency = {git = "https://gitlab+deploy-token-enerdag:Qhsn9UkL6zZxa4xPkWQf@atreus.informatik.uni-tuebingen.de/SecureEnergyProsumer/enerdag/", branch = "main"}
+enerdag-utils =  {git = "https://gitlab+deploy-token-enerdag:Qhsn9UkL6zZxa4xPkWQf@atreus.informatik.uni-tuebingen.de/SecureEnergyProsumer/enerdag/", branch = "main"}
+chrono = {version = "0.4.11", features = ["serde"]}
+
+
+mosaik-rust-api = {path = "../../mosaik-rust-api"}
+
+
+rand = "0.8.3"
+sled = {version = "0.34.6"}#, optional = true} # for debugging/measuring databse: , default-features = false  }
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+
+log = "0.4"
+env_logger = "0.9"
+clap = { version = "3.1.0", features = ["derive"] }
+rayon = "1"
+
+[dev-dependencies]
+criterion = "0.3"
+
+# Benchmark for neighborhood.steps 
+[[bench]]
+name = "nbhd_steps"
+harness = false
